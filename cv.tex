@@ -1,0 +1,199 @@
+%80%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% template originally found here:
+%     http://texblog.org/2012/04/25/writing-a-cv-in-latex/
+\documentclass[10pt]{article}
+
+\usepackage{array, xcolor, bibentry}
+\usepackage[margin=2cm]{geometry}
+\usepackage{sectsty}
+
+\sectionfont{\normalsize\mdseries\MakeUppercase}
+
+% make a table separated by a light grey vline
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+\pagestyle{empty}
+
+% title (name)
+\begin{center}
+{\Large Kenneth R. Lyons}
+\end{center}
+\vspace{1em}
+
+% left side contact info
+\begin{minipage}[ht]{0.68\textwidth}
+    Robotics, Autonomous Systems, \\
+    and Controls Laboratory\\
+    Academic Surge 2334\\
+    UC Davis\\
+    Davis, CA 95616
+\end{minipage}
+% right side contact info
+\begin{minipage}[ht]{0.5\textwidth}
+    619 Pole Line Rd. Apt. 151\\
+    Davis, CA 95618\\
+    (530) 400-0136\\
+    \texttt{ixjlyons@gmail.com}\\
+    \texttt{http://ixjlyons.github.io}
+\end{minipage}
+
+\section*{Education}
+\begin{tabular}{L!{\VRule}R}
+    2012--present
+        & {\textbf{University of California, Davis}, Davis, California}\\
+        & Ph.D. in Mechanical and Aerospace Engineering. (expected June 2017)\\
+        & Advisor: Sanjay S. Joshi\\
+    [5pt]
+    2008--20012
+        & {\textbf{University of California, Davis}, Davis, California}\\
+        & B.S. in Mechanical Engineering. Graduation with high honors. Minor in
+            Linguistics.
+\end{tabular}
+
+
+\section*{Awards and Recognition}
+\begin{tabular}{L!{\VRule}R}
+    2012
+        & UC Davis Department of Mechanical and Aerospace Engineering Service
+            Award, for participation in the Computing and Robotics Outreach
+            Club\\
+    [5pt]
+    2012
+        & UC Davis Clinical and Translational Science Center / College of
+            Engineering Summer Camp Program\\
+\end{tabular}
+
+
+\section*{Experience}
+\begin{tabular}{L!{\VRule}R}
+    6/12--present
+        & {\bf Graduate student researcher} Robotics, Autonomous Systems, and
+            Controls Laboratory, UC Davis\\
+        & Work on computer and machine interface control using electromyography,
+            including upper limb prosthetic control. Lead Android application
+            programmer for additional laboratory experiments.\\
+    [5pt]
+    9/12--12/12
+        & {\bf Teaching Assistant}, UC Davis\\
+        & Supervised laboratory sessions in experimental methods course (EME
+            107B) and graded lab reports.\\
+    [5pt]
+    1/12--4/12
+        & {\bf Undergraduate Student Researcher}, Sports Biomechanics
+            Laboratory, UC Davis\\
+        & Assisted Ph.D. student with riderless bicycle project, including some
+            embedded system analysis and literature review of bicycle
+            dynamics.\\
+    [5pt]
+    9/10--6/12
+        & {\bf Tutor at Superb Tutors}\\
+        & Tutored high school and college students in math, physics, and
+            engineering courses.\\
+\end{tabular}
+
+
+\section*{Projects}
+\begin{tabular}{L!{\VRule}R}
+    2014--present
+        & {\bf pygesture}\\
+        & Open-source myoelectric gesture recognition suite for end-to-end
+            prosthesis control experiments, written in Python. Includes data
+            acquisition, signal processing, classification, graphical user
+            interface, and communication with real-time simulation software.\\
+        & \texttt{http://github.com/ixjlyons/pygesture}\\
+    [5pt]
+    2013--2014
+        & {\bf Walk Again}\\
+        & International project which produced a brain-controlled exoskeleton
+            demonstrated at the 2014 FIFA World Cup. Worked as a part of the
+            human-machine interface team and created an LED-based feedback
+            system to enable robust control during the demonstration.\\
+\end{tabular}
+
+
+\section*{Publications}
+\begin{tabular}{L!{\VRule}R}
+    % RESNA 2015
+    2015 &
+        \textbf{K. R. Lyons} and S. S. Joshi,
+        ``A Case Study on Classification of Foot Gestures via Surface
+            Electromyography,''
+        \emph{Rehabilitation Engineering and Assistive Technology Society of
+            America (RESNA) Annual Conference},
+        Denver, CO,
+        2015.\\
+    [5pt]
+    % ICORR 2013
+    2013 &
+        \textbf{K. R. Lyons} and S. S. Joshi,
+        ``Paralyzed Subject Controls Telepresence Mobile Robot Using Novel
+            {sEMG} Brain-Computer Interface: Case Study,''
+        \emph{Rehabilitation Robotics (ICORR), 2013 IEEE International
+            Conference on},
+        Seattle, WA,
+        2013.\\
+\end{tabular}
+
+
+\section*{Conference Posters and Abstracts}
+\begin{tabular}{L!{\VRule}R}
+    % SFN 2015 (my poster)
+    2015 &
+        \textbf{K. R. Lyons} and S. S. Joshi,
+        ``Real-Time Myoelectric Control of a Virtual Upper Limb Prosthesis via
+            Lower Leg Gestures: Preliminary Results,''
+        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
+        Chicago, IL,
+        2014.\\
+    [5pt]
+    % SFN 2014 (my poster)
+    2014 &
+        \textbf{K. R. Lyons} and S. S. Joshi,
+        ``Arm Prosthetic Control through Electromyographic Recognition of Leg
+            Gestures,''
+        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
+        Washington D.C.,
+        2014.\\
+    [5pt]
+    % SFN 2014 (Maria's poster)
+    2014 &
+        I. M. Skavhaug, C. Dao, \textbf{K. R. Lyons}, A. Powell, L. Davidson,
+            S. Joshi,
+        ``Use of an Ear-Mounted Myoelectric Human-Computer Interface in the
+            Home: A Pediatric Case Study with Tetra-Amelia Syndrome Subject,''
+        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
+        Washington D.C.,
+        2014.\\
+    [5pt]
+    % SFN 2014 (Walk Again a)
+    2014 &
+        A. Lin, D. Schwarz, R. Sellaouti, S. Shokur, R. C. Moioli, F. L. Brasil,
+            K. R. Fast, N. A. Peretti, A. Takigami, S. Gallo, \textbf{K. R.
+            Lyons}, P. Mittendorfer, M. Lebedev, S. Joshi, G. Cheng, E. Morya,
+            A. Rudolph, M. Nicolelis,
+        ``The Walk Again Project: Brain-Controlled Exoskeleton Locomotion,''
+        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
+        Washington D.C.,
+        2014.\\
+    [5pt]
+    % SFN 2014 (Walk Again b)
+    2014 &
+        F. L. Brasil, R. C. Moioli, S. Shokur, K. Fast, A. L. Lin, N. A.
+            Peretti, A. Takigami, \textbf{K. R. Lyons}, D. J. Zielinski, L.
+            Sawaki, S. Joshi, E. Morya, M. A. L. Nicolelis,
+        ``The Walk Again Project: An EEG/EMG Training Paradigm to Control
+            Locomotion,''
+        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
+        Washington D.C.,
+        2014.\\
+\end{tabular}
+
+\end{document}
+%80%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
