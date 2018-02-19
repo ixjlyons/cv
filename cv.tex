@@ -3,18 +3,48 @@
 %     http://texblog.org/2012/04/25/writing-a-cv-in-latex/
 \documentclass[10pt]{article}
 
-\usepackage{array, xcolor, bibentry}
-\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{bibentry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{sectsty}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{hyperref}
 
-\sectionfont{\normalsize\mdseries\MakeUppercase}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 
-% make a table separated by a light grey vline
 \definecolor{lightgray}{gray}{0.8}
-\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
-\newcolumntype{R}{p{0.8\textwidth}}
-\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
 
+\titlespacing\section{0pt}{1em}{0em}
+\titleformat{\section}
+    {\normalsize}
+    {\thesection}
+    {1em}
+    {\MakeUppercase}
+    [\color{lightgray}\titlerule]
+
+% Left table cell. Display a bold title with a date range below.
+\newcommand\LColRaw[3]{\parbox[t]{#1}{
+    \raggedleft%
+    {\bf#2}\\
+    {\small\color{gray}#3}}
+}
+\newcommand\LCol[2]{\LColRaw{1.3in}{#1}{#2}}
+
+% Right table cell where you specify all formatting. Line breaks are ok.
+\newcommand\RCol[1]{\parbox[t]{6.0in}{#1}}
+% Right table cell with a title, subtitle, then remaining content
+\newcommand\RColFancy[3]{\RCol{\textbf{#1} --- #2\\#3}}
+
+% override default table row spacing
+\renewcommand{\arraystretch}{1.5}
+% override default table col spacing
+\renewcommand{\tabcolsep}{3pt}
 
 \begin{document}
 
@@ -23,169 +53,217 @@
 
 % title (name)
 \begin{center}
+%\noindent
 {\Large Kenneth R. Lyons}
 \end{center}
+
 \vspace{1em}
 
 % left side contact info
-\begin{minipage}[ht]{0.68\textwidth}
-    Robotics, Autonomous Systems, \\
-    and Controls Laboratory\\
-    Academic Surge 2334\\
-    UC Davis\\
-    Davis, CA 95616
+\hspace*{-\parindent}%
+\begin{minipage}[ht]{0.6\textwidth}
+\begin{flushleft}
+    PhD Candidate\\
+    Robotics, Autonomous Systems, and Controls Laboratory\\
+    Department of Mechanical and Aerospace Engineering\\
+    University of California, Davis
+\end{flushleft}
 \end{minipage}
 % right side contact info
-\begin{minipage}[ht]{0.5\textwidth}
-    619 Pole Line Rd. Apt. 151\\
-    Davis, CA 95618\\
-    (530) 400-0136\\
+\begin{minipage}[ht]{0.4\textwidth}
+    \raggedleft{%
     \texttt{ixjlyons@gmail.com}\\
-    \texttt{ixjlyons.com}
+    \href{http://ixjlyons.com}{\nolinkurl{ixjlyons.com}}}
 \end{minipage}
 
+
 \section*{Education}
-\begin{tabular}{L!{\VRule}R}
-    2012--present
-        & {\textbf{University of California, Davis}, Davis, California}\\
-        & Ph.D. in Mechanical and Aerospace Engineering.\\
-        & Advisor: Sanjay S. Joshi\\
-    [5pt]
-    2008--2012
-        & {\textbf{University of California, Davis}, Davis, California}\\
-        & B.S. in Mechanical Engineering. Graduation with high honors. Minor in
-            Linguistics.
-\end{tabular}
+
+\begin{longtable}{rl}
+    \LCol{PhD}{2012--2018}
+        & \RColFancy%
+            {University of California, Davis}
+            {Davis, CA}
+            {Mechanical and Aerospace Engineering\\Advisor: Sanjay S. Joshi}
+    \\
+    \LCol{BS}{2008--2012}
+        & \RColFancy%
+            {University of California, Davis}
+            {Davis, CA}
+            {Mechanical Engineering, minor in Linguistics, graduation with high
+            honors}
+\end{longtable}
 
 
-\section*{Awards and Recognition}
-\begin{tabular}{L!{\VRule}R}
-    2012
-        & UC Davis Department of Mechanical and Aerospace Engineering Service
-            Award, for participation in the Computing and Robotics Outreach
-            Club\\
-    [5pt]
-    2012
-        & UC Davis Clinical and Translational Science Center / College of
-            Engineering Summer Camp Program\\
-\end{tabular}
-
+%\section*{Awards and Recognition}
+%\begin{tabular}{L!{\VRule}R}
+%    2012
+%        & UC Davis Department of Mechanical and Aerospace Engineering Service
+%            Award, for participation in the Computing and Robotics Outreach
+%            Club\\
+%    [5pt]
+%    2012
+%        & UC Davis Clinical and Translational Science Center / College of
+%            Engineering Summer Camp Program\\
+%\end{tabular}
 
 \section*{Experience}
-\begin{tabular}{L!{\VRule}R}
-    9/12--present
-        & {\bf Teaching Assistant}, Department of Mechanical and Aerospace
-            Engineering, UC Davis\\
-        & Supervised laboratory sessions in experimental methods course
-            and graded lab reports (EME 107B). Assisted with introducing
-            scientific computing with Python for mechanical vibrations course
-            (ENG 122).\\
-    [5pt]
-    6/12--9/16
-        & {\bf Graduate student researcher} Robotics, Autonomous Systems, and
-            Controls Laboratory, UC Davis\\
-        & Worked on computer and machine interface control using
+
+\begin{longtable}{cc}
+    \LCol{Teaching Assistant}{2012--present}
+        & \RColFancy%
+            {Department of Mechanical and Aerospace Engineering}
+            {UC Davis}
+            {Supervised laboratory sessions in experimental methods course and
+            graded lab reports (EME 107B). Assisted with introducing scientific
+            computing with Python for mechanical vibrations (ENG 122).}\\
+    \LCol{Graduate Student Researcher}{2012--present}
+        & \RColFancy%
+            {Robotics, Autonomous Systems, and Controls Lab}
+            {UC Davis}
+            {Worked on computer and machine interface control using
             electromyography, including upper limb prosthetic control. Lead
             Android application development for additional laboratory
-            experiments.\\
-    [5pt]
-    1/12--4/12
-        & {\bf Undergraduate Student Researcher}, Sports Biomechanics
-            Laboratory, UC Davis\\
-        & Assisted Ph.D. student with riderless bicycle project, including some
-            embedded system analysis and literature review of bicycle
-            dynamics.\\
-    [5pt]
-    9/10--6/12
-        & {\bf Tutor at Superb Tutors}\\
-        & Tutored high school and college students in math, physics, and
-            engineering courses.\\
-\end{tabular}
-
+            experiments.}\\
+    \LCol{Undergraduate Student Researcher}{Winter 2012}
+        & \RColFancy%
+            {Sports Biomechanics Lab}
+            {UC Davis}
+            {Assisted Ph.D. student with riderless bicycle project, including
+            some embedded system analysis and literature review of bicycle
+            dynamics.}\\
+    \LCol{Undergraduate Student Researcher}{Summer 2011}
+        & \RColFancy%
+            {Integration Engineering Lab}
+            {UC Davis}
+            {Developed programming and robotics competitions for middle and
+            high school students, which later became part of C-STEM Day at UC
+            Davis.}\\
+    \LCol{Tutor}{2010--2012}
+        & \RColFancy%
+            {Superb Tutors}
+            {Davis, CA}
+            {Tutored high school and college students in math, physics, and
+            engineering courses.}
+\end{longtable}
 
 \section*{Projects}
-\begin{tabular}{L!{\VRule}R}
-    2014--present
-        & {\bf pygesture}\\
-        & Open-source myoelectric gesture recognition suite for end-to-end
+
+\begin{longtable}{cc}
+    \LCol{AxoPy}{2016--present}
+        & \RCol%
+            {Library for writing experiments using electrophysiological signals
+            to control machine and computer interfaces.\\
+            \url{https://github.com/ucdrascal/axopy}}\\
+    \LCol{Resonance}{2017--present}
+        & \RCol%
+            {An open set of materials for an undergraduate course in mechanical
+            vibrations. As a TA for the course these materials were developed
+            for, I created homework assignments and administered a JupyterHub
+            server for students to use.\\
+            \url{https://github.com/moorepants/resonance}}\\
+    \LCol{PyGesture}{2014--2016}
+        & \RCol%
+            {Open-source myoelectric gesture recognition suite for end-to-end
             prosthesis control experiments, written in Python. Includes data
             acquisition, signal processing, classification, graphical user
             interface, and communication with real-time simulation software.\\
-        & \texttt{http://github.com/ixjlyons/pygesture}\\
-    [5pt]
-    2013--2014
-        & {\bf Walk Again}\\
-        & International project which produced a brain-controlled exoskeleton
-            demonstrated at the 2014 FIFA World Cup. Worked as a part of the
-            human-machine interface team and created an LED-based feedback
-            system to enable robust control during the demonstration.\\
-\end{tabular}
+            \url{https://github.com/ixjlyons/pygesture}}\\
+    \LCol{Walk Again}{2013--2014}
+        & \RCol%
+            {International project which produced a brain-controlled
+            exoskeleton demonstrated at the 2014 FIFA World Cup. Worked as
+            a part of the human-machine interface team and created an LED-based
+            feedback system to enable robust control during the
+            demonstration.}\\
+    \LCol{SecondEyes}{2011--2015}
+        & \RCol%
+            {SecondEyes is a telepresence mobile robot meant to allow
+            individuals with severe mobility impairments to virtually view
+            their surroundings via a single electromyographic (EMG) sensor.
+            I was responsible for creating the Android application to control
+            the robot and display its camera feed as well as developing the
+            robot's electronics.}\\
+\end{longtable}
 
 
 \section*{Publications}
-\begin{tabular}{L!{\VRule}R}
+
+\begin{longtable}{cc}
+    % EMBC 2018
+    \LCol{(submitted)}{} & \RCol{%
+        \textbf{K. R. Lyons} and S. S. Joshi,
+        ``Effects of Mapping Uncertainty on Visuomotor Adaptation to
+            Trial-By-Trial Perturbations with Proportional Myoelectric
+            Control,''
+        \emph{Proceedings of the IEEE Engineering in Medicine and Biology
+            Society Conference (EMBC)},
+        2018.}\\
+    % THMS
+    \LCol{(submitted)}{} & \RCol{%
+        I. M. Skavhaug, \textbf{K. R. Lyons}, B. Korte, L. Barry, H. Chen, S.
+            S. Joshi,
+        ``A Minimal Recording Configuration sEMG Human-Computer Interface for
+            Cursor Control,''
+        \emph{IEEE Transactions on Human-Machine Systems}.}\\
     % TNSRE
-    (in press) &
+    \LCol{(in press)}{} & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``Upper Limb Prosthesis Control for High-Level Amputees via Myoelectric
             Recognition of Leg Gestures,''
         \emph{IEEE Transactions on Neural Systems and Rehabilitation
-            Engineering}.\\
-    [5pt]
+            Engineering}.}\\
     % EMBC 2016
-    2016 &
+    \LCol{2016}{} & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``Real-Time Evaluation of a Myoelectric Control Method for High-Level
             Upper Limb Amputees Based on Homologous Leg Movements,''
         \emph{Proceedings of the IEEE Engineering in Medicine and Biology
             Society Conference (EMBC)},
         Orlando, FL,
-        2016.\\
-    [5pt]
+        2016.}\\
     % Human Movement Science
-    2016 &
+    \LCol{2016}{} & \RCol{%
         I. M. Skavhaug, \textbf{K. R. Lyons}, A. Nemchuk, S. Muroff, and S.
             Joshi,
         ``Learning to Modulate the Partial Powers of a Single sEMG Power
             Spectrum Through a Novel Human-Computer Interface,''
         \emph{Human Movement Science}, vol. 47, pp. 60--69,
-        2016.\\
-    [5pt]
+        2016.}\\
     % RSS 2016 workshop paper
-    2016 &
+    \LCol{2016}{} & \RCol{%
         J. Varley, S. Sridhar, J. Weisz, E. Rand, \textbf{K. Lyons}, S. Joshi,
             J. Stein, and P. Allen,
         ``Human Robot Interface for Assistive Grasping,''
         \emph{Socially \& Physically Assistive Robotics for Humanity (workshop
             at Robotics: Science and Systems)},
         Ann Arbor, MI,
-        2016.\\
-    [5pt]
+        2016.}\\
     % RESNA 2015
-    2015 &
+    \LCol{2015}{} & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``A Case Study on Classification of Foot Gestures via Surface
             Electromyography,''
         \emph{Annual Conference of the Rehabilitation Engineering and Assistive
             Technology Society of America (RESNA)},
         Denver, CO,
-        2015.\\
-    [5pt]
+        2015.}\\
     % ICORR 2013
-    2013 &
+    \LCol{2013}{} & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``Paralyzed Subject Controls Telepresence Mobile Robot Using Novel
             {sEMG} Brain-Computer Interface: Case Study,''
         \emph{Proceedings of the IEEE International Conference on
             Rehabilitation Robotics (ICORR)},
         Seattle, WA,
-        2013.\\
-\end{tabular}
+        2013.}\\
+\end{longtable}
 
 \section*{Conference Posters and Abstracts}
-\begin{tabular}{L!{\VRule}R}
+
+\begin{longtable}{cc}
     % EMBC 2016 (Maria's 1-page paper)
-    2016 &
+    \LCol{2016}{} & \RCol{%
         I. M. Skavhaug, \textbf{K. R. Lyons}, S. D. Muroff, H. Chen, L. Barry,
             B. Korte, and S. S. Joshi,
         ``Fitts' Law Evaluation of a Passive Rotation Paradigm for
@@ -193,48 +271,43 @@
         \emph{Proceedings of the IEEE Engineering in Medicine and Biology Society
             Conference (EMBC)},
         Orlando, FL,
-        2016.\\
-    [5pt]
+        2016.}\\
     % SFN 2015 (my poster)
-    2015 &
+    \LCol{2015}{} & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``Real-Time Myoelectric Control of a Virtual Upper Limb Prosthesis via
             Lower Leg Gestures: Preliminary Results,''
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Chicago, IL,
-        2015.\\
-    [5pt]
+        2015.}\\
     % SFN 2015 (Maria's poster)
-    2015 &
+    \LCol{2015}{} & \RCol{%
         I. M. Skavhaug, \textbf{K. R. Lyons}, A. Nemchuk, S. Muroff, and S. S.
             Joshi,
         ``Control of a Cursor in Two Dimensions with One Single sEMG Signal:
             Learning of a Novel Motor Skill,''
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Chicago, IL,
-        2015.\\
-    [5pt]
+        2015.}\\
     % SFN 2014 (my poster)
-    2014 &
+    \LCol{2014}{} & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``Arm Prosthetic Control through Electromyographic Recognition of Leg
             Gestures,''
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Washington D.C.,
-        2014.\\
-    [5pt]
+        2014.}\\
     % SFN 2014 (Maria's poster)
-    2014 &
+    \LCol{2014}{} & \RCol{%
         I. M. Skavhaug, C. Dao, \textbf{K. R. Lyons}, A. Powell, L. Davidson,
             S. Joshi,
         ``Use of an Ear-Mounted Myoelectric Human-Computer Interface in the
             Home: A Pediatric Case Study with Tetra-Amelia Syndrome Subject,''
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Washington D.C.,
-        2014.\\
-    [5pt]
+        2014.}\\
     % SFN 2014 (Walk Again a)
-    2014 &
+    \LCol{2014}{} & \RCol{%
         A. Lin, D. Schwarz, R. Sellaouti, S. Shokur, R. C. Moioli, F. L. Brasil,
             K. R. Fast, N. A. Peretti, A. Takigami, S. Gallo, \textbf{K. R.
             Lyons}, P. Mittendorfer, M. Lebedev, S. Joshi, G. Cheng, E. Morya,
@@ -242,10 +315,9 @@
         ``The Walk Again Project: Brain-Controlled Exoskeleton Locomotion,''
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Washington D.C.,
-        2014.\\
-    [5pt]
+        2014.}\\
     % SFN 2014 (Walk Again b)
-    2014 &
+    \LCol{2014}{} & \RCol{%
         F. L. Brasil, R. C. Moioli, S. Shokur, K. Fast, A. L. Lin, N. A.
             Peretti, A. Takigami, \textbf{K. R. Lyons}, D. J. Zielinski, L.
             Sawaki, S. Joshi, E. Morya, M. A. L. Nicolelis,
@@ -253,8 +325,8 @@
             Locomotion,''
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Washington D.C.,
-        2014.\\
-\end{tabular}
+        2014.}
+\end{longtable}
 
 \end{document}
 %80%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
