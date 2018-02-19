@@ -8,6 +8,7 @@
 *.log
 *.synctex
 *.spl
+*.out
 
 # generated figure/table files when using endfloat package
 *.fff
