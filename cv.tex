@@ -1,71 +1,86 @@
 %80%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% template originally found here:
+% Here's my CV. It's a bit of a mess, but of course it is because I chose to
+% use LaTeX to write it. I originally based it on a template found here:
 %     http://texblog.org/2012/04/25/writing-a-cv-in-latex/
+% I have gradually tweaked things until it no longer resembles that example.
+% The document is essentially a series of tables with custom macros to write
+% cells how I want. Each cell is a parbox which allows for newlines, itemized
+% lists, etc.
 \documentclass[10pt]{article}
 
+\usepackage[margin=0.5in]{geometry}
 \usepackage{array}
 \usepackage{xcolor}
-\usepackage{bibentry}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{sectsty}
-\usepackage{makecell}
-\usepackage{multirow}
-\usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{longtable}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors, simple customizations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \definecolor{lightgray}{gray}{0.8}
+\definecolor{darkgray}{gray}{0.3}
+\definecolor{urlcolor}{HTML}{0a606c}
 
-\titlespacing\section{0pt}{1em}{0em}
+\hypersetup{colorlinks=true, urlcolor=urlcolor}
+
+% section style (small caps, underlined)
 \titleformat{\section}
     {\normalsize}
     {\thesection}
     {1em}
-    {\MakeUppercase}
+    {\textsc}
     [\color{lightgray}\titlerule]
+
+% subsection style
+\titleformat*{\subsection}{\normalsize\bfseries}
+
+% get rid of space surrounding/between items in itemize environment
+\setlist[itemize]{noitemsep,nolistsep,leftmargin=*}
+% make itemized list bullets smaller
+\renewcommand\labelitemi{\footnotesize$\bullet$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Left table cell. Display a bold title with a date range below.
 \newcommand\LColRaw[3]{\parbox[t]{#1}{
     \raggedleft%
     {\bf#2}\\
-    {\small\color{gray}#3}}
+    {\small\color{darkgray}#3}}
 }
 \newcommand\LCol[2]{\LColRaw{1.3in}{#1}{#2}}
 
 % Right table cell where you specify all formatting. Line breaks are ok.
-\newcommand\RCol[1]{\parbox[t]{6.0in}{#1}}
+\newcommand\RCol[1]{\parbox[t]{6in}{#1}}
 % Right table cell with a title, subtitle, then remaining content
-\newcommand\RColFancy[3]{\RCol{\textbf{#1} --- #2\\#3}}
+\newcommand\RColFancy[3]{\RCol{\textbf{#1} --- {\color{darkgray}#2}\\#3}}
+\newcommand\RColList[3]{\RCol{\textbf{#1} --- {\color{darkgray}#2}#3}}
 
-% override default table row spacing
-\renewcommand{\arraystretch}{1.5}
-% override default table col spacing
+% override default spacing between table rows
+\renewcommand{\arraystretch}{1.7}
+% override default spacing between table columns
 \renewcommand{\tabcolsep}{3pt}
+
 
 \begin{document}
 
 \thispagestyle{empty}
 \pagestyle{empty}
 
-% title (name)
 \begin{center}
-%\noindent
-{\Large Kenneth R. Lyons}
+{\large Kenneth R. Lyons}
 \end{center}
-
-\vspace{1em}
 
 % left side contact info
 \hspace*{-\parindent}%
 \begin{minipage}[ht]{0.6\textwidth}
 \begin{flushleft}
     PhD Candidate\\
-    Robotics, Autonomous Systems, and Controls Laboratory\\
-    Department of Mechanical and Aerospace Engineering\\
+    Mechanical and Aerospace Engineering\\
     University of California, Davis
 \end{flushleft}
 \end{minipage}
@@ -79,8 +94,9 @@
 
 \section*{Education}
 
+\vspace*{-\baselineskip}
 \begin{longtable}{rl}
-    \LCol{PhD}{2012--2018}
+    \LCol{PhD}{2012--present}
         & \RColFancy%
             {University of California, Davis}
             {Davis, CA}
@@ -95,100 +111,154 @@
 \end{longtable}
 
 
-%\section*{Awards and Recognition}
-%\begin{tabular}{L!{\VRule}R}
-%    2012
-%        & UC Davis Department of Mechanical and Aerospace Engineering Service
-%            Award, for participation in the Computing and Robotics Outreach
-%            Club\\
-%    [5pt]
-%    2012
-%        & UC Davis Clinical and Translational Science Center / College of
-%            Engineering Summer Camp Program\\
-%\end{tabular}
-
 \section*{Experience}
 
+\vspace*{-\baselineskip}
 \begin{longtable}{cc}
-    \LCol{Teaching Assistant}{2012--present}
-        & \RColFancy%
-            {Department of Mechanical and Aerospace Engineering}
-            {UC Davis}
-            {Supervised laboratory sessions in experimental methods course and
-            graded lab reports (EME 107B). Assisted with introducing scientific
-            computing with Python for mechanical vibrations (ENG 122).}\\
     \LCol{Graduate Student Researcher}{2012--present}
-        & \RColFancy%
-            {Robotics, Autonomous Systems, and Controls Lab}
-            {UC Davis}
-            {Worked on computer and machine interface control using
-            electromyography, including upper limb prosthetic control. Lead
-            Android application development for additional laboratory
-            experiments.}\\
-    \LCol{Undergraduate Student Researcher}{Winter 2012}
-        & \RColFancy%
-            {Sports Biomechanics Lab}
-            {UC Davis}
-            {Assisted Ph.D. student with riderless bicycle project, including
-            some embedded system analysis and literature review of bicycle
-            dynamics.}\\
-    \LCol{Undergraduate Student Researcher}{Summer 2011}
-        & \RColFancy%
-            {Integration Engineering Lab}
-            {UC Davis}
-            {Developed programming and robotics competitions for middle and
-            high school students, which later became part of C-STEM Day at UC
-            Davis.}\\
+    & \RColList%
+        {Robotics, Autonomous Systems, and Controls Lab}
+        {UC Davis}
+        {\begin{itemize}
+            \item Developed Android applications for several human-computer
+            interface studies based on surface electromyography (EMG).
+            \item Created printed circuit boards for powering EMG sensors and
+            connecting them to mobile devices and data acquisition systems.
+            \item Assisted with experiment design, data analysis, and
+            manuscript preparation for lab publications.
+         \end{itemize}}\\
+    \LCol{Teaching Assistant}{2012--2017}
+    & \RColList%
+        {Department of Mechanical and Aerospace Engineering}
+        {UC Davis}
+        {\begin{itemize}
+            \item Supervised experimental methods lab sessions and graded lab
+            reports (EME 107B).
+            \item Helped develop a computational framework for learning
+            mechanical vibrations via Python, created homework assignments,
+            and administered a JupyterHub for students to use (ENG 122).
+            \item Coached mechanical engineering senior design teams and
+            produced a workshop on implementing control systems with Arduino
+            (EME185).
+         \end{itemize}}\\
+    \LCol{Undergraduate Researcher}{Winter 2012}
+    & \RColList%
+        {Sports Biomechanics Lab}
+        {UC Davis}
+        {\begin{itemize}
+            \item Assisted a PhD student with his robotic (riderless) bicycle
+            dissertation project.
+            \item Produced a wiring diagram for the robot's circuitry and
+            hardware.
+            \item Developed a C program for the robot's STM32 microcontroller
+            for steering encoder calibration.
+         \end{itemize}}\\
+    \LCol{Undergraduate Researcher}{Summer 2011}
+    & \RColList%
+        {Integration Engineering Lab}
+        {UC Davis}
+        {\begin{itemize}
+            \item Developed problems and challenges for programming and
+            robotics competitions for middle and high school students, which
+            later became part of C-STEM Day at UC Davis.
+         \end{itemize}}\\
     \LCol{Tutor}{2010--2012}
-        & \RColFancy%
-            {Superb Tutors}
-            {Davis, CA}
-            {Tutored high school and college students in math, physics, and
-            engineering courses.}
+    & \RColList%
+        {Superb Tutors}
+        {Davis, CA}
+        {\begin{itemize}
+            \item Tutored high school and college students in math, physics,
+            and engineering courses.
+         \end{itemize}}
 \end{longtable}
+
 
 \section*{Projects}
 
+\vspace*{-\baselineskip}
 \begin{longtable}{cc}
     \LCol{AxoPy}{2016--present}
         & \RCol%
-            {Library for writing experiments using electrophysiological signals
-            to control machine and computer interfaces.\\
+            {Python library for rapidly developing human-computer interface
+            experiments based on electrophysiological signals. Includes
+            functionality for data acquisition, data storage, signal
+            processing, intention estimation, and graphical user interface
+            feedback.\\
             \url{https://github.com/ucdrascal/axopy}}\\
     \LCol{Resonance}{2017--present}
         & \RCol%
-            {An open set of materials for an undergraduate course in mechanical
-            vibrations. As a TA for the course these materials were developed
-            for, I created homework assignments and administered a JupyterHub
-            server for students to use.\\
+            {Open course materials for undergraduate mechanical vibrations,
+            including Jupyter notebooks for learning and practicing analyses
+            and a Python library for working with vibratory systems.\\
             \url{https://github.com/moorepants/resonance}}\\
     \LCol{PyGesture}{2014--2016}
         & \RCol%
-            {Open-source myoelectric gesture recognition suite for end-to-end
-            prosthesis control experiments, written in Python. Includes data
-            acquisition, signal processing, classification, graphical user
-            interface, and communication with real-time simulation software.\\
+            {Myoelectric gesture recognition suite for prosthesis control
+            experiments, written in Python. Pre-cursor to AxoPy.\\
             \url{https://github.com/ixjlyons/pygesture}}\\
     \LCol{Walk Again}{2013--2014}
         & \RCol%
-            {International project which produced a brain-controlled
-            exoskeleton demonstrated at the 2014 FIFA World Cup. Worked as
-            a part of the human-machine interface team and created an LED-based
+            {International collaborative effort to produce a brain-controlled
+            exoskeleton demonstrated at the 2014 FIFA World Cup. I worked as
+            a part of the human-machine interface team and created a LED-based
             feedback system to enable robust control during the
             demonstration.}\\
     \LCol{SecondEyes}{2011--2015}
         & \RCol%
-            {SecondEyes is a telepresence mobile robot meant to allow
-            individuals with severe mobility impairments to virtually view
-            their surroundings via a single electromyographic (EMG) sensor.
-            I was responsible for creating the Android application to control
-            the robot and display its camera feed as well as developing the
-            robot's electronics.}\\
+            {A telepresence mobile robot built for individuals with severe
+            mobility impairments to virtually view their surroundings using
+            a single electromyography (EMG) sensor. I wrote the Android
+            application to control the robot and developed the robot's
+            electronics and firmware.}\\
+\end{longtable}
+
+
+\section*{Awards and Recognition}
+
+\vspace*{-\baselineskip}
+\begin{longtable}{cc}
+    \LCol{Service Award}{2012}
+        & \RColFancy%
+            {Department of Mechanical and Aerospace Engineering}
+            {UC Davis}
+            {Award for participation in the Computing and Robotics Outreach
+            as part of my work with the Integration Engineering Lab.}\\
+    \LCol{Summer Camp Award}{2012}
+        & \RColFancy%
+            {Clinical and Translational Science Center}
+            {UC Davis}
+            {Grant used to fund development of the electromyography-based
+            controller for the SecondEyes telepresence mobile robot during the
+            summer before starting my PhD program.}
+\end{longtable}
+
+
+\section*{Other Interests}
+
+\vspace*{-\baselineskip}
+\begin{longtable}{cc}
+    \LCol{Python}{}
+        & \RCol{Python is my main programming language and I have used it in
+        a variety of contexts since 2010. In 2017, I attended the SciPy
+        conference in Austin, Texas and co-taught a tutorial session on
+        automatic code generation with SymPy
+        (\url{http://www.sympy.org/scipy-2017-codegen-tutorial}).}\\
+    \LCol{Linux}{}
+        & \RCol{I have been using Linux-based systems since 2008, and
+        I currently serve as the secretary of one of the longest-running Linux
+        Users' Groups (LUGOD).}\\
+    \LCol{Free Software}{}
+        & \RCol{I am an advocate of free (libre) and open source software and
+        enjoy contributing to projects that I use. I have aimed to make most of
+        my work as a PhD student available under permissive licenses.}
 \end{longtable}
 
 
 \section*{Publications}
 
+\subsection*{Papers}
+
+\vspace*{-\baselineskip}
 \begin{longtable}{cc}
     % EMBC 2018
     \LCol{(submitted)}{} & \RCol{%
@@ -201,8 +271,8 @@
         2018.}\\
     % THMS
     \LCol{(submitted)}{} & \RCol{%
-        I. M. Skavhaug, \textbf{K. R. Lyons}, B. Korte, L. Barry, H. Chen, S.
-            S. Joshi,
+        I. M. Skavhaug, \textbf{K. R. Lyons}, H. Chen, L. Barry, B. Korte, S.
+        S. Joshi,
         ``A Minimal Recording Configuration sEMG Human-Computer Interface for
             Cursor Control,''
         \emph{IEEE Transactions on Human-Machine Systems}.}\\
@@ -259,8 +329,9 @@
         2013.}\\
 \end{longtable}
 
-\section*{Conference Posters and Abstracts}
+\subsection*{Conference Posters and Abstracts}
 
+\vspace*{-\baselineskip}
 \begin{longtable}{cc}
     % EMBC 2016 (Maria's 1-page paper)
     \LCol{2016}{} & \RCol{%
