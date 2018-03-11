@@ -8,13 +8,15 @@
 % lists, etc.
 \documentclass[10pt]{article}
 
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=0.5in,bmargin=0.85in]{geometry}
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{longtable}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{fancyhdr}
+%\usepackage{lastpage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Colors, simple customizations
@@ -65,11 +67,22 @@
 % override default spacing between table columns
 \renewcommand{\tabcolsep}{3pt}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header/footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+% clear the header and footer
+\fancyhf{}
+% get rid of header line
+\renewcommand{\headrulewidth}{0pt}
+% page number
+%\cfoot{\thepage~of~\pageref{LastPage}}
+% last edited date
+\rfoot{\footnotesize{Last Updated: \today}}
+
+
 
 \begin{document}
-
-\thispagestyle{empty}
-\pagestyle{empty}
 
 \begin{center}
 {\large Kenneth R. Lyons}
@@ -90,7 +103,6 @@
     \texttt{ixjlyons@gmail.com}\\
     \href{http://ixjlyons.com}{\nolinkurl{ixjlyons.com}}}
 \end{minipage}
-
 
 \section*{Education}
 
