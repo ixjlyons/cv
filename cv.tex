@@ -78,7 +78,7 @@
 % page number
 %\cfoot{\thepage~of~\pageref{LastPage}}
 % last edited date
-\rfoot{\footnotesize{Last Updated: \today}}
+%\rfoot{\footnotesize{Last Updated: \today}}
 
 
 
@@ -92,33 +92,66 @@
 \hspace*{-\parindent}%
 \begin{minipage}[ht]{0.6\textwidth}
 \begin{flushleft}
-    PhD Candidate\\
-    Mechanical and Aerospace Engineering\\
-    University of California, Davis
+    Systems Engineer\\
+    Systron Donner Inertial
 \end{flushleft}
 \end{minipage}
 % right side contact info
 \begin{minipage}[ht]{0.4\textwidth}
     \raggedleft{%
     \texttt{ixjlyons@gmail.com}\\
-    \href{http://ixjlyons.com}{\nolinkurl{ixjlyons.com}}}
+    \href{https://ixjlyons.com}{\nolinkurl{ixjlyons.com}}}
 \end{minipage}
+
 
 \section*{Education}
 
 \vspace*{-\baselineskip}
 \begin{longtable}{rl}
-    \LCol{PhD}{2012--present}
+    \LCol{PhD}{2012--2018}
     & \RColFancy%
         {University of California, Davis}
         {Davis, CA}
-        {Mechanical and Aerospace Engineering\\Advisor: Sanjay S. Joshi}\\
+        {Mechanical and Aerospace Engineering\\
+         Advisor: Sanjay S. Joshi\\
+         Dissertation: Human and Machine Learning in Myoelectric Control}\\
     \LCol{BS}{2008--2012}
     & \RColFancy%
         {University of California, Davis}
         {Davis, CA}
-        {Mechanical Engineering, minor in Linguistics, graduation with high
+        {Mechanical Engineering\\Minor in Linguistics, graduation with high
          honors}
+\end{longtable}
+
+\section*{Core Skills}
+
+\vspace*{-\baselineskip}
+\begin{longtable}{cc}
+    \LCol{Scientific Computing}{}
+    & \RCol%
+        {I have about 10 years of experience with Python for scientific
+        computing: signal processing, machine learning, statistical analysis,
+        and visualization. I'm a co-maintainer of pyqtgraph, a widely-used
+        high-performance data visualization library, so I keep up with best
+        practices for packaging and reproducible environments.}\\
+    \LCol{Application Design}{}
+    & \RCol%
+        {I've developed graphical user interfaces with Python (PyQt), MATLAB,
+        C++ (Qt), and Java (Android), predominantly for building human-computer
+        interface experiments and demonstrations. I've also built interfaces
+        for exploring and presenting data.}\\
+    \LCol{Embedded Systems}{}
+    & \RCol%
+        {I have experience developing bare-metal C code for AVR and some ARM
+        Cortex (TI, ST) microcontrollers as well as TI DSPs. I enjoy all parts
+        of the development process: system design, schematic capture and PCB
+        layout, programming, and verification.}\\
+    \LCol{Experiment Design}{}
+    & \RCol%
+        {My primary experience with experiment design is for human subject
+        studies for research applications, but the analytical techniques apply
+        widely. I enjoy taking an existing dataset and answering the question:
+        what's the next step?}\\
 \end{longtable}
 
 
@@ -126,18 +159,40 @@
 
 \vspace*{-\baselineskip}
 \begin{longtable}{cc}
-    \LCol{Graduate Student Researcher}{2012--present}
+    \LCol{INS/GPS Engineer}{2018--present}
+    & \RColList%
+        {Systron Donner Inertial}
+        {Concord, CA}
+        {\begin{itemize}
+            \item Developed models of signal processing pipelines for strapdown
+            inertial navigation systems based on quartz MEMS gyroscopes.
+            \item Implemented processing algorithms in C for Texas Instruments
+            DSPs as well as VHDL for Xilinx FPGAs.
+            \item Developed and performed tests for inertial navigation system
+            performance verification.
+            \item Took on FPGA engineer role to complete DO-254 hardware and
+            simulation verification efforts for a project after the company
+            faced several key departures.
+            \item Learned and followed AS9100 quality management processes.
+         \end{itemize}}\\
+    \LCol{Graduate Student Researcher}{2012--2018}
     & \RColList%
         {Robotics, Autonomous Systems, and Controls Lab}
         {UC Davis}
         {\begin{itemize}
-            \item Developed Android applications (Java) for several
-            human-computer interface studies based on surface electromyography
-            (EMG).
-            \item Created printed circuit boards for powering EMG sensors and
-            connecting them to mobile devices and data acquisition systems.
-            \item Assisted with experiment design, data analysis, and
-            manuscript preparation for lab publications.
+            \item Implemented signal processing and machine learning algorithms
+            for decoding user intentions from surface electromyography (EMG) in
+            real time on both desktop computer systems and the Android mobile
+            platform.
+            \item Designed software frameworks to control robotics simulations
+            and computer interfaces via electrophysiological signals.
+            \item Designed human subject experiments for evaluating myoelectric
+            prosthesis control techniques and human motor adaptation.
+            \item Analyzed research data and synthesized findings into
+            publications and conference presentations.
+            \item Designed and built printed circuit boards for powering EMG
+            sensors and connecting them to mobile devices and data acquisition
+            systems.
          \end{itemize}}\\
     \LCol{Teaching Assistant}{2012--2017}
     & \RColList%
@@ -153,26 +208,19 @@
             produced a workshop on implementing control systems with Arduino
             (EME185).
          \end{itemize}}\\
-    \LCol{Undergraduate Researcher}{Winter 2012}
+    \LCol{Undergraduate Researcher}{2011--2012}
     & \RColList%
-        {Sports Biomechanics Lab}
+        {Sports Biomechanics Lab, Integration Engineering Lab}
         {UC Davis}
         {\begin{itemize}
-            \item Assisted a PhD student with his robotic (riderless) bicycle
-            dissertation project.
-            \item Produced a wiring diagram for the robot's circuitry and
-            hardware.
-            \item Developed a C program for the robot's STM32 microcontroller
-            for steering encoder calibration.
-         \end{itemize}}\\
-    \LCol{Undergraduate Researcher}{Summer 2011}
-    & \RColList%
-        {Integration Engineering Lab}
-        {UC Davis}
-        {\begin{itemize}
-            \item Developed problems and challenges for programming and
-            robotics competitions for middle and high school students, which
-            later became part of C-STEM Day at UC Davis.
+            \item Assisted a PhD student with a variety of electrical and
+            programming tasks for his robotic riderless bicycle dissertation
+            project.
+            \item Developed and implemented an algorithm for steering encoder
+            calibration.
+            \item Developed a new STEM outreach program for middle and high
+            school students to get hands-on experience with programming and
+            robotics.
          \end{itemize}}\\
     \LCol{Tutor}{2010--2012}
     & \RColList%
@@ -185,7 +233,7 @@
 \end{longtable}
 
 
-\section*{Projects}
+\section*{Selected Projects}
 
 \vspace*{-\baselineskip}
 \begin{longtable}{cc}
@@ -194,26 +242,15 @@
         {Python library for rapidly developing human-computer interface
         experiments based on electrophysiological signals for control. Includes
         functionality for data acquisition, data storage, signal processing,
-        intention estimation (via machine learning), and graphical user
-        interface feedback.\\
+        intention estimation, and graphical user interface feedback.\\
         \url{https://github.com/ucdrascal/axopy}}\\
-    \LCol{Resonance}{2017--present}
+    \LCol{Resonance}{2016--2018}
     & \RCol%
         {Open course materials for undergraduate mechanical vibrations,
         including Jupyter notebooks for learning and practicing analyses and
-        a Python library for working with vibratory systems. This is
+        a Python library for working with vibratory systems. This was
         a collaborative effort with the instructor for the class at UCD.\\
         \url{https://github.com/moorepants/resonance}}\\
-    \LCol{PyGesture}{2014--2016}
-    & \RCol%
-        {Myoelectric gesture recognition suite for prosthesis control
-        experiments, written in Python. Pre-cursor to AxoPy.\\
-        \url{https://github.com/ixjlyons/pygesture}}\\
-    \LCol{Autocalibrate}{2014}
-    & \RCol%
-        {Android application to evaluate an automatic calibration scheme based
-        on a recursive least squares solution to cursor trajectory matching.
-        Written for an adaptive filtering course project.}\\
     \LCol{Walk Again}{2013--2014}
     & \RCol%
         {International collaborative effort to produce a brain-controlled
@@ -230,58 +267,19 @@
 \end{longtable}
 
 
-\section*{Awards and Recognition}
+\section*{Selected Publications}
 
 \vspace*{-\baselineskip}
 \begin{longtable}{cc}
-    \LCol{Service Award}{2012}
-    & \RColFancy%
-        {Department of Mechanical and Aerospace Engineering}
-        {UC Davis}
-        {Award for participation in the Computing and Robotics Outreach Club as
-        part of my work with the Integration Engineering Lab.}\\
-    \LCol{Summer Camp Award}{2012}
-    & \RColFancy%
-        {Clinical and Translational Science Center}
-        {UC Davis}
-        {Grant used to fund development of the electromyography-based
-        controller for the SecondEyes telepresence mobile robot during the
-        summer before starting my PhD program.}
-\end{longtable}
-
-
-\section*{Other Interests}
-
-\vspace*{-\baselineskip}
-\begin{longtable}{cc}
-    \LCol{Python}{}
-    & \RCol%
-        {Python is my main programming language and I have used it in a variety
-        of contexts since 2010. In 2017, I attended the SciPy conference in
-        Austin, Texas and co-taught a tutorial session on automatic code
-        generation with SymPy
-        (\url{http://www.sympy.org/scipy-2017-codegen-tutorial}).}\\
-    \LCol{Linux}{}
-    & \RCol%
-        {I have been using Linux-based systems since 2008, and I currently
-        serve as the secretary of one of the longest-running Linux Users'
-        Groups (LUGOD).}\\
-    \LCol{Free Software}{}
-    & \RCol%
-        {I am an advocate of free (libre) and open source software and enjoy
-        contributing to projects that I use. I have aimed to make most of my
-        work as a PhD student available under permissive licenses.}
-\end{longtable}
-
-
-\section*{Publications}
-
-\subsection*{Papers}
-
-\vspace*{-\baselineskip}
-\begin{longtable}{cc}
+    % AxoPy JOSS
+    \LCol{2019}{}
+    & \RCol{%
+        \textbf{K. R. Lyons} and B. W. L. Margolis,
+        ``AxoPy: A Python Library for Implementing Human-Computer Interface
+            Experiments,''
+        \emph{Journal of Open Source Software}, vol. 4, no. 34, 2019.}\\
     % EMBC 2018
-    \LCol{(submitted)}{}
+    \LCol{2018}{}
     & \RCol{%
         \textbf{K. R. Lyons} and S. S. Joshi,
         ``Effects of Mapping Uncertainty on Visuomotor Adaptation to
@@ -289,15 +287,8 @@
             Control,''
         \emph{Proceedings of the IEEE Engineering in Medicine and Biology
             Society Conference (EMBC)},
+        Honolulu, HI,
         2018.}\\
-    % THMS
-    \LCol{(submitted)}{}
-    &\RCol{%
-        I. M. Skavhaug, \textbf{K. R. Lyons}, H. Chen, L. Barry, B. Korte, S.
-        S. Joshi,
-        ``A Minimal Recording Configuration sEMG Human-Computer Interface for
-            Cursor Control,''
-        \emph{IEEE Transactions on Human-Machine Systems}.}\\
     % TNSRE
     \LCol{2018}{}
     & \RCol{%
@@ -306,16 +297,6 @@
             Recognition of Leg Gestures,''
         \emph{IEEE Transactions on Neural Systems and Rehabilitation
             Engineering}, vol. 26, no. 4, 2018.}\\
-    % EMBC 2016
-    \LCol{2016}{}
-    & \RCol{%
-        \textbf{K. R. Lyons} and S. S. Joshi,
-        ``Real-Time Evaluation of a Myoelectric Control Method for High-Level
-            Upper Limb Amputees Based on Homologous Leg Movements,''
-        \emph{Proceedings of the IEEE Engineering in Medicine and Biology
-            Society Conference (EMBC)},
-        Orlando, FL,
-        2016.}\\
     % Human Movement Science
     \LCol{2016}{}
     & \RCol{%
@@ -325,92 +306,6 @@
             Spectrum Through a Novel Human-Computer Interface,''
         \emph{Human Movement Science}, vol. 47, pp. 60--69,
         2016.}\\
-    % RSS 2016 workshop paper
-    \LCol{2016}{}
-    & \RCol{%
-        J. Varley, S. Sridhar, J. Weisz, E. Rand, \textbf{K. Lyons}, S. Joshi,
-            J. Stein, and P. Allen,
-        ``Human Robot Interface for Assistive Grasping,''
-        \emph{Socially \& Physically Assistive Robotics for Humanity (workshop
-            at Robotics: Science and Systems)},
-        Ann Arbor, MI,
-        2016.}\\
-    % RESNA 2015
-    \LCol{2015}{}
-    & \RCol{%
-        \textbf{K. R. Lyons} and S. S. Joshi,
-        ``A Case Study on Classification of Foot Gestures via Surface
-            Electromyography,''
-        \emph{Annual Conference of the Rehabilitation Engineering and Assistive
-            Technology Society of America (RESNA)},
-        Denver, CO,
-        2015.}\\
-    % ICORR 2013
-    \LCol{2013}{}
-    & \RCol{%
-        \textbf{K. R. Lyons} and S. S. Joshi,
-        ``Paralyzed Subject Controls Telepresence Mobile Robot Using Novel
-            {sEMG} Brain-Computer Interface: Case Study,''
-        \emph{Proceedings of the IEEE International Conference on
-            Rehabilitation Robotics (ICORR)},
-        Seattle, WA,
-        2013.}\\
-\end{longtable}
-
-\clearpage
-\subsection*{Conference Posters and Abstracts}
-
-\vspace*{-\baselineskip}
-\begin{longtable}{cc}
-    % EMBC 2016 (Maria's 1-page paper)
-    \LCol{2016}{}
-    & \RCol{%
-        I. M. Skavhaug, \textbf{K. R. Lyons}, S. D. Muroff, H. Chen, L. Barry,
-            B. Korte, and S. S. Joshi,
-        ``Fitts' Law Evaluation of a Passive Rotation Paradigm for
-            Two-Dimensional Cursor Control with a Single sEMG Signal''
-        \emph{Proceedings of the IEEE Engineering in Medicine and Biology Society
-            Conference (EMBC)},
-        Orlando, FL,
-        2016.}\\
-    % SFN 2015 (my poster)
-    \LCol{2015}{}
-    & \RCol{%
-        \textbf{K. R. Lyons} and S. S. Joshi,
-        ``Real-Time Myoelectric Control of a Virtual Upper Limb Prosthesis via
-            Lower Leg Gestures: Preliminary Results,''
-        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
-        Chicago, IL,
-        2015.}\\
-    % SFN 2015 (Maria's poster)
-    \LCol{2015}{}
-    & \RCol{%
-        I. M. Skavhaug, \textbf{K. R. Lyons}, A. Nemchuk, S. Muroff, and S. S.
-            Joshi,
-        ``Control of a Cursor in Two Dimensions with One Single sEMG Signal:
-            Learning of a Novel Motor Skill,''
-        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
-        Chicago, IL,
-        2015.}\\
-    % SFN 2014 (my poster)
-    \LCol{2014}{}
-    & \RCol{%
-        \textbf{K. R. Lyons} and S. S. Joshi,
-        ``Arm Prosthetic Control through Electromyographic Recognition of Leg
-            Gestures,''
-        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
-        Washington D.C.,
-        2014.}\\
-    % SFN 2014 (Maria's poster)
-    \LCol{2014}{}
-    & \RCol{%
-        I. M. Skavhaug, C. Dao, \textbf{K. R. Lyons}, A. Powell, L. Davidson,
-            S. Joshi,
-        ``Use of an Ear-Mounted Myoelectric Human-Computer Interface in the
-            Home: A Pediatric Case Study with Tetra-Amelia Syndrome Subject,''
-        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
-        Washington D.C.,
-        2014.}\\
     % SFN 2014 (Walk Again a)
     \LCol{2014}{}
     & \RCol{%
@@ -422,17 +317,20 @@
         \emph{Annual Meeting of the Society for Neuroscience (SfN)},
         Washington D.C.,
         2014.}\\
-    % SFN 2014 (Walk Again b)
-    \LCol{2014}{}
+    % ICORR 2013
+    \LCol{2013}{}
     & \RCol{%
-        F. L. Brasil, R. C. Moioli, S. Shokur, K. Fast, A. L. Lin, N. A.
-            Peretti, A. Takigami, \textbf{K. R. Lyons}, D. J. Zielinski, L.
-            Sawaki, S. Joshi, E. Morya, M. A. L. Nicolelis,
-        ``The Walk Again Project: An EEG/EMG Training Paradigm to Control
-            Locomotion,''
-        \emph{Annual Meeting of the Society for Neuroscience (SfN)},
-        Washington D.C.,
-        2014.}
+        \textbf{K. R. Lyons} and S. S. Joshi,
+        ``Paralyzed Subject Controls Telepresence Mobile Robot Using Novel
+            {sEMG} Brain-Computer Interface: Case Study,''
+        \emph{Proceedings of the IEEE International Conference on
+            Rehabilitation Robotics (ICORR)},
+        Seattle, WA,
+        2013.}\\
+    \LCol{\hfill}{}
+    & \RCol{\footnotesize{Full list at
+        \href{https://ixjlyons.com\#publications}%
+             {\nolinkurl{ixjlyons.com\#publications}}}}\\
 \end{longtable}
 
 \end{document}
